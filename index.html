@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/output.css">
+    <style>
+        .hamburger-line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: black;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .typing {
+            width: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid white;
+            animation:
+                typing 3s steps(30) forwards,
+                blink 0.7s infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Kondisi sebelum muncul */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        /* Kondisi setelah muncul */
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animasi dari kiri */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Animasi dari kanan */
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body class="bg-[#09140b]">
+    <nav class="bg-transparent shadow-green-900 text-white shadow-md">
+        <div id="#home" class="container mx-auto px-5">
+
+            <div class="flex justify-between items-center h-16">
+
+                <a href="#" class="text-xl font-bold tracking-wide">
+                    Phone
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex items-center  gap-8 font-medium">
+                    <li><a href="#home" class="hover:text-green-200">Home</a></li>
+                    <li><a href="#about" class="hover:text-green-200">About</a></li>
+                    <li><a href="#specifications" class="hover:text-green-200">Specifications</a></li>
+                    <li><a href="#features" class="hover:text-green-200">Features</a></li>
+                    <li><a href="#gallery" class="hover:text-green-200">Gallery</a></li>
+                    <li><a href="#contact" class="hover:text-green-200">Contact</a></li>
+                </ul>
+
+                <!-- Hamburger -->
+                <button id="hamburger" class="md:hidden p-2 rounded-lg hover:bg-green-700" aria-label="Buka menu"
+                    aria-expanded="false">
+
+                    <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-5">
+
+                <ul class="flex flex-col gap-1 font-medium">
+                    <li><a href="#home" class="block px-4 py-3 rounded-lg bg-green-700">Home</a></li>
+                    <li><a href="#about" class="block px-4 py-3 rounded-lg hover:bg-green-700">About</a></li>
+                    <li><a href="#specifications"
+                            class="block px-4 py-3 rounded-lg hover:bg-green-700">Specifications</a></li>
+                    <li><a href="#features" class="block px-4 py-3 rounded-lg hover:bg-green-700">Features</a></li>
+                    <li><a href="#gallery" class="block px-4 py-3 rounded-lg hover:bg-green-700">Gallery</a></li>
+                    <li><a href="#contact" class="block px-4 py-3 rounded-lg hover:bg-green-700">Contact</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- HOME -->
+    <div class="container pt-7 w-full mx-auto">
+        <div class="px-auto flex flex-col md:flex-row items-center justify-between gap-5 p-6">
+            <div class="md:w-1/2 mx-auto text-white">
+                <h1 class="text-4xl font-medium mb-4 typing text-green-600">BUILT FOR GAMERS.</h1>
+                <p class="mb-6">Rasakan pengalaman gaming yang lebih maksimal dengan performa tangguh, teknologi
+                    pendingin canggih, dan desain futuristik dari Black Shark.</p>
+
+                <a href="#" class="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800">Explore
+                    Product-></a>
+            </div>
+            <div class="md:w-1/2 mt-7 ">
+                <img src="img/bs.png" alt="Placeholder Image" class="animate-fade w-full rounded-lg bg shadow-lg">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- About -->
+    <div id="about" class="container pt-7 w-full mx-auto mt-20 reveal">
+        <div class="px-auto flex  md:flex-row items-center justify-between gap-5 p-8">
+            <div class="md:w-3/4 mx-auto text-white border border-green-600 p-4 rounded-2xl shadow-lg">
+                <h1 class="text-4xl font-medium mb-4 typing text-green-600">ABOUT BLACK SHARK.</h1>
+                <p class="mb-6">Black Shark merupakan brand teknologi yang dikenal melalui produk smartphone gaming dan
+                    aksesori gaming. Didirikan pada tahun 2017, Black Shark berfokus menghadirkan pengalaman bermain
+                    game mobile melalui inovasi teknologi,
+                    performa perangkat, serta desain yang berorientasi pada kebutuhan gamer.</p>
+                <p class="mb-6">Black Shark juga mengembangkan produk lain seperti tablet, smartwatch, gaming
+                    controller, dan aksesori pendingin.</p>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- specifications -->
+    <div id="specifications" class="container pt-7 w-full mx-auto reveal">
+        <h1 class="text-4xl font-medium mb-4 text-center text-green-600">Products</h1>
+        <h1 class="text-4xl font-medium mb-4 text-center text-green-600">Black Shark 5 Pro.</h1>
+        <div class="px-auto flex flex-col md:flex-row items-center justify-between gap-5 p-6 text-white">
+            <div
+                class="md:w-1/3 border border-green-600 p-4 rounded-2xl shadow-lg transition-transform hover:scale-105 hover:shadow-green-600 hover:shadow-md duration-300 ease-in-out">
+                <img src="img/3p.webp" alt="Placeholder Image"
+                    class="object-contain h-64 animate-fade w-full rounded-lg bg shadow-lg">
+                <h1 class="font-medium mb-4 text-center text-green-500 pt-6">
+                    Black Shark 3 Pro
+                </h1>
+
+                <p>
+                    - Processor: Snapdragon 865 5G<br>
+                    - Display: 7.1-inch AMOLED<br>
+                    - Refresh Rate: 90Hz<br>
+                    - Battery: 5,000mAh<br>
+                    - Charging: 65W
+                </p>
+            </div>
+            <div
+                class="md:w-1/3 border border-green-600 p-4 rounded-2xl shadow-lg  transition-transform hover:scale-105 hover:shadow-green-600 hover:shadow-md duration-300 ease-in-out">
+                <img src="img/4p.webp" alt="Placeholder Image"
+                    class="object-contain h-64 animate-fade w-full rounded-lg bg shadow-lg">
+                <h1 class="font-medium mb-4 text-center text-green-500 pt-6">
+                    Black Shark 4 Pro
+                </h1>
+
+                <p>
+                    - Processor: Snapdragon 888 5G<br>
+                    - Display: 6.67-inch AMOLED<br>
+                    - Refresh Rate: 144Hz<br>
+                    - Battery: 4,500mAh<br>
+                    - Charging: 120W
+                </p>
+            </div>
+            <div
+                class="md:w-1/3 border border-green-600 p-4 rounded-2xl shadow-lg  transition-transform hover:scale-105 hover:shadow-green-600 hover:shadow-md duration-300 ease-in-out">
+                <img src="img/5pro.jpg" alt="Placeholder Image"
+                    class="object-contain h-64 animate-fade w-full rounded-lg bg shadow-lg">
+                <h1 class="font-medium mb-4 text-center text-green-500 pt-6">Black Shark 5 Pro</h1>
+                <p>- Processor: Snapdragon 8 Gen 1<br>
+                    - Display: 6.67-inch AMOLED<br>
+                    - Refresh Rate: 144Hz<br>
+                    - Battery: 4,650mAh<br>
+                    - Charging: 120W</p>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <!-- FEATURES -->
+
+    <div id="features" class="container pt-7 w-full mx-auto mt-20 reveal text-white">
+        <h1 class="text-4xl font-medium mb-4 text-center text-green-600">Features</h1>
+
+        <div class="w-full flex flex-col md:flex-row justify-beetwen  my-2  p-8 border border-green-600 rounded-2xl shadow-lg">
+            <div class=" flex text-white  p-4 rounded-2xl shadow-lg  ">
+                <img src="img/144hz.png" alt="Placeholder Image"
+                    class="object-contain h-36 animate-fade w-full rounded-lg bg shadow-lg">
+            </div>
+            <p class="my-auto"><span class="font-bold text-green-600">144Hz Refresh Rate</span> <br>
+                Tampilan visual yang responsif dan pergerakan gambar lebih halus untuk pengalaman gaming.
+            </p>
+        </div>
+        <div class="w-full flex flex-col md:flex-row justify-beetwen my-2  p-8 border border-green-600 rounded-2xl shadow-lg">
+            <div class=" flex text-white  p-4 rounded-2xl shadow-lg ">
+                <img src="img/120w.png" alt="Placeholder Image"
+                    class="object-contain h-36 animate-fade w-full rounded-lg bg shadow-lg">
+            </div>
+            <p class="my-auto"><span class="font-bold text-green-600">120W Fast Charging</span> <br>
+                Charging cepat hingga 120W untuk mengisi daya perangkat dengan lebih efisien.
+            </p>
+        </div>
+        <div class="w-full flex flex-col md:flex-row justify-beetwen my-2  p-8 border border-green-600 rounded-2xl shadow-lg">
+            <div class=" flex text-white  p-4 rounded-2xl shadow-lg ">
+                <img src="img/cooling.png" alt="Placeholder Image"
+                    class="object-contain h-36 animate-fade w-full rounded-lg bg shadow-lg">
+            </div>
+            <p class="my-auto"><span class="font-bold text-green-600">Advanced Cooling System</span> <br>
+                Teknologi pendingin untuk membantu menjaga suhu perangkat saat bermain game.
+            </p>
+        </div>
+        <div class="w-full flex flex-col md:flex-row justify-beetwen my-2  p-8 border border-green-600 rounded-2xl shadow-lg">
+            <div class=" flex text-white  p-4 rounded-2xl shadow-lg ">
+                <img src="img/popup.png" alt="Placeholder Image"
+                    class="object-contain h-36 animate-fade w-full rounded-lg bg shadow-lg">
+            </div>
+            <p class="my-auto"><span class="font-bold text-green-600">Pop-up Triggers</span> <br>
+                Tombol fisik tambahan untuk membantu kontrol permainan menjadi lebih nyaman.
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+
+            mobileMenu.classList.toggle('hidden');
+
+            hamburger.setAttribute('aria-expanded', !isOpen);
+
+            menuIcon.innerHTML = isOpen
+                ? '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>'
+                : '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>';
+        });
+
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        document.querySelectorAll(
+            '.reveal, .reveal-left, .reveal-right'
+        ).forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+
+</html>
